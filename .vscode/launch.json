@@ -9,6 +9,18 @@
             "request": "launch",
             "name": "XiaoPingDu",
             "program": "${workspaceRoot}/app.js"
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "DatabaseInit",
+            "program": "${workspaceRoot}/database/db-init.js"
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "DatabaseTest",
+            "program": "${workspaceRoot}/database/db-test.js"
         }
     ]
 }

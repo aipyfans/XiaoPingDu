@@ -18,6 +18,11 @@
     "url": "git@github.com:li-jun-bo/XiaoPingDu.git"
   },
   "dependencies": {
-    "koa": "^2.3.0"
+    "koa": "^2.3.0",
+    "koa-bodyparser": "^4.2.0",
+    "koa-router": "^7.2.1",
+    "mysql2": "^1.4.0",
+    "node-uuid": "^1.4.8",
+    "sequelize": "^4.4.2"
   }
 }

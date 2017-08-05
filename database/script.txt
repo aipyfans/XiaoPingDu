@@ -1,0 +1,17 @@
+
+create database xpd;
+
+grant all privileges on xpd.* to 'www'@'%' identified by 'www';
+grant all privileges on test.* to 'www'@'%' identified by 'www';
+
+// 登录mysql 
+mysql -u root -p    
+
+// 查看端口号 
+show global variables like 'port';
+
+// 重新启动mysql  
+/etc/init.d/mysqld restart  
+
+// 
+SELECT CONCAT('drop table ',table_name,';') FROM information_schema.`TABLES` WHERE table_schema='xpd';
