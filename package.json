@@ -1,0 +1,23 @@
+{
+  "name": "XiaoPingDu",
+  "version": "1.0.0",
+  "description": "XPD is very nice!",
+  "main": "app.js",
+  "scripts": {
+    "start": "node --use_strict app.js"
+  },
+  "keywords": [
+    "koa",
+    "rest",
+    "api"
+  ],
+  "author": "William Lee",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:li-jun-bo/XiaoPingDu.git"
+  },
+  "dependencies": {
+    "koa": "^2.3.0"
+  }
+}
