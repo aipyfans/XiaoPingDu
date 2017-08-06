@@ -1,8 +1,8 @@
 const Koa = require('koa');
 const bodyParser = require('koa-bodyparser');
 
-const controller = require('./middleware/controller');
-const rest = require('./middleware/rest');
+const apis = require('./middlewares/apis');
+const rest = require('./middlewares/rest');
 
 const app = new Koa();
 
@@ -18,8 +18,8 @@ app.use(bodyParser());
 // bind .rest() for ctx:
 app.use(rest.restify());
 
-// add controller:
-app.use(controller());
+// add apis scanner:
+app.use(apis());
 
 app.listen(3000);
 

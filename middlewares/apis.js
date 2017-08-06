@@ -1,5 +1,6 @@
 
 const fs = require('fs');
+const path = require('path');
 
 // add url-route in /controllers:
 
@@ -28,18 +29,24 @@ function addMapping(router, mapping) {
 }
 
 function addControllers(router, dir) {
-    fs.readdirSync(__dirname + '/' + dir).filter((f) => {
+    let apis_dir, current_dir = '/middlewares';
+    if (__dirname.endsWith(current_dir)) {
+        let endNum = __dirname.length - current_dir.length;
+        apis_dir = __dirname.substring(0, endNum)
+    }
+
+    fs.readdirSync(apis_dir + '/' + dir).filter((f) => {
         return f.endsWith('.js');
     }).forEach((f) => {
         console.log(`process controller: ${f}...`);
-        let mapping = require(__dirname + '/' + dir + '/' + f);
+        let mapping = require(apis_dir + '/' + dir + '/' + f);
         addMapping(router, mapping);
     });
 }
 
 module.exports = function (dir) {
-    let controllers_dir = dir || 'controllers';
+    let apis_dir = dir || 'apis';
     let router = require('koa-router')();
-    addControllers(router, controllers_dir);
+    addControllers(router, apis_dir);
     return router.routes();
 };
