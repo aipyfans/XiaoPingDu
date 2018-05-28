@@ -5,13 +5,16 @@ let User = model.User;
 
 
 module.exports = {
-    
+
+    'a':'b',
+
     'GET /api/users': async (ctx, next) => {
         let bodys = await User.findAll();
-        ctx.response.type = 'application/json';
-        ctx.response.body = { users: bodys };
-
-        // throw new APIError('users:not_found', 'user not found by id.');
+        if (bodys) {
+            ctx.rest({users: bodys});
+        } else {
+            throw new APIError('users:not_found', 'user not found by id.');
+        }
     }
 
 };

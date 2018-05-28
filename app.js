@@ -21,6 +21,7 @@ app.use(rest.restify());
 // add apis scanner:
 app.use(apis());
 
-app.listen(3000);
+// app.listen(3000);
+// console.log('app started at port 3000...');
 
-console.log('app started at port 3000...');
+module.exports = app;

@@ -4,7 +4,8 @@
   "description": "XPD is very nice!",
   "main": "app.js",
   "scripts": {
-    "start": "node --use_strict app.js"
+    "start": "node --use_strict app.js",
+    "test": "mocha"
   },
   "keywords": [
     "koa",
@@ -24,5 +25,9 @@
     "mysql2": "^1.4.0",
     "node-uuid": "^1.4.8",
     "sequelize": "^4.4.2"
+  },
+  "devDependencies": {
+    "mocha": "^5.1.1",
+    "supertest": "^3.1.0"
   }
 }
